@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel="stylesheet" href="css/preloader.css">
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector('.preloader').classList.add('_hidden');
+            setTimeout(() => {
+                document.querySelector('.preloader').remove();
+            }, 310)
+        });
+    </script>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+    <link type="text/plain" rel="author" href="/devTeam.txt" />
+    <link rel='stylesheet' href='css/reset.css'>
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/index.css'>
+
+    <title>Login or Signup | Tasker</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico"/>
+    <script src="js/darkmode.js"></script>
+</head>
+
+<body>
+
+    <div class="preloader">
+        <svg width="60" height="60" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <linearGradient x1="0%" y1="100%" y2="100%" id="loading-gradient">
+                <stop stop-color="#fff" stop-opacity="0" offset="0%" />
+                <stop stop-color="#fff" stop-opacity=".5" offset="40%" />
+                <stop stop-color="#fff" offset="100%" />
+            </linearGradient>
+            <g fill="none" fill-rule="evenodd">
+                <path fill="inherit" d="M34 18c0-8.837-7.163-16-16-16-6.34 0-11.82 3.688-14.409 9" stroke="url(#loading-gradient)" stroke-width="4" stroke-linecap="round">
+                </path>
+            </g>
+        </svg>
+    </div>
+
+    <main class="wrapper">
+
+        <form class="form">
+            <div class="form__col">
+                <div class="form__wrapper">
+                    <div class="form__group">
+                        <button class="form__login">Login</button>
+                        <button class="form__signup _hidden">Signup</button>
+                    </div>
+                    <div class="form__container">
+                        <div class="form__shell form__shell_left">
+                            <input id="logLoginInput" autofocus type="text" class="form__field" placeholder="Username">
+                            <div class="form__password-shell">
+                                <input id="logPasswordInput" name="logPassword" type="password" class="form__field" placeholder="Password">
+                                <button id="logShowPassword" class="form__show">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" d="M128,55.99219C48,55.99219,16,128,16,128s32,71.99219,112,71.99219S240,128,240,128,208,55.99219,128,55.99219Z" />
+                                        <circle cx="128" cy="128" r="32" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <button id="LoginButton" class="form__btn">Login</button>
+                            <p id="logFormMsg" class="form__msg _hidden">null</p>
+                        </div>
+                        <div class="form__shell form__shell_right _hidden">
+                            <input id="regLoginInput" type="text" class="form__field" placeholder="Username">
+                            <div class="form__password-shell">
+                                <input id="regPasswordInput" name="regPassword" type="password" class="form__field" placeholder="Password">
+                                <button id="regShowPassword" class="form__show">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" d="M128,55.99219C48,55.99219,16,128,16,128s32,71.99219,112,71.99219S240,128,240,128,208,55.99219,128,55.99219Z" />
+                                        <circle cx="128" cy="128" r="32" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <input id="regVerifPasswordInput" name="regPassword" type="password" class="form__field" placeholder="Repeat password">
+                            <button id="SignupButton" class="form__btn">Signup</button>
+                            <p id="regFormMsg" class="form__msg _hidden">null</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src='js/index.js'></script>
+    <script src="js/md5.min.js"></script>
+
+</body>
+
+</html>

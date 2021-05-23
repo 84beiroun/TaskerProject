@@ -1,0 +1,24 @@
+:root {
+    --bg: #091b31;
+    --bg-form: #0d2543;
+    --border: #4a4f63;
+    --bs-color: #06192483;
+    --title-color: #fff;
+    --descr-color: #c4c4c4;
+    --birth-color: #aaaaaa;
+    --border-field: #87bbf0;
+    --bg-btn: linear-gradient(351deg, #005fff 25%, #3281cd 100%);
+    --bs-color-btn: rgba(0, 94, 255, 0.178);
+    --border-card: #061331;
+    --bg-preloader: var(--bg-form);
+    --bg-preloader-item: #182b4e;
+    --bg-editing: #133664;
+	--bg-field: #182b4e;
+	--text-field: var(--title-color);
+	--scroll-bg: #3281cd;
+	--scroll-handle-bg: #fff;
+	--accent-color: #3281cd;
+	--link: #00FF57;
+	--invalid: #ff6868;
+	--valid: #68ff95;
+}

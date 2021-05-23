@@ -1,0 +1,80 @@
+:root {
+    --ff: "Inter", sans-serif;
+    --bs: 0px 8px 24px;
+    --focus: 3px;
+
+	@media screen and (prefers-reduced-motion: no-preference) {
+		--trns: .3s ease-in-out;
+	}
+
+	@media screen and (prefers-reduced-motion: reduce) {
+		--trns: .1s ease-in-out;
+	}
+
+	scrollbar-color: var(--scroll-handle-bg) var(--scroll-bg);
+	scrollbar-width: thin;
+
+	transition: scrollbar-color var(--trns),
+	outline var(--trns);
+
+	--color-secondary: #eec413;
+
+	&.theme--night {
+	    --color-secondary: #e684af;
+	}
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter-LightBETA.woff2) format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter-Bold.woff2) format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: var(--ff);
+	background-color: var(--bg);
+}
+
+.header-shell {
+    --header-height: 0px width: 100%;
+    height: var(--header-height);
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--scroll-bg);
+    transition: background-color var(--trns);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-handle-bg);
+    border-radius: 20px;
+    border: 3px solid var(--scroll-bg);
+    transition: background-color var(--trns),
+        border var(--trns);
+}

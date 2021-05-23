@@ -1,0 +1,27 @@
+.grid {
+    background-color: var(--bg);
+	min-height: 100vh;
+	transition: background-color var(--trns);
+
+	padding: 20px 0;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 310px);
+        justify-content: center;
+        gap: 15px;
+
+		@media (min-width: 1500px) {
+			grid-template-columns: repeat(auto-fit, 500px);
+		}
+
+
+		@media (max-width: 991px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 664px) {
+			grid-template-columns: 1fr;
+		}
+    }
+}

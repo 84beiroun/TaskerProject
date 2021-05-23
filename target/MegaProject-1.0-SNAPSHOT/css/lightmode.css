@@ -1,0 +1,24 @@
+:root {
+    --bg: #ecf0ff;
+    --bg-form: #fff;
+    --border: #dfdfdf;
+	--bs-color: #959da549;
+	--title-color: #252525;
+	--descr-color: #7b7e7c;
+	--birth-color: #8d8d8d;
+	--border-field: #87bbf0;
+	--bg-btn: linear-gradient(351deg, #005fff 25%, #3281cd 100%);
+	--bs-color-btn: rgba(0, 95, 255, .4);
+	--border-card: rgba(153, 153, 153, .2);
+	--bg-preloader: #d4d4d4;
+	--bg-preloader-item: #bebebe;
+	--bg-editing: #e9eef8;
+	--bg-field: #fff;
+	--text-field: var(--title-color);
+	--scroll-bg: #fff;
+	--scroll-handle-bg: #3281cd;
+	--accent-color: #3281cd;
+	--link: #FF00A8;
+	--invalid: #ff6868;
+	--valid: #32ff6f;
+}

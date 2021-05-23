@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel="stylesheet" href="css/preloader.css">
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector('.preloader').classList.add('_hidden');
+            setTimeout(() => {
+                document.querySelector('.preloader').remove();
+            }, 310)
+        });
+    </script>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+    <link type="text/plain" rel="author" href="/devTeam.txt" />
+    <link rel='stylesheet' href='css/reset.css'>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/main.css'>
+    <link rel="icon" type="image/png" href="img/favicon.ico"/>
+    <title>Home | Tasker</title>
+
+    <script src="js/darkmode.js"></script>
+</head>
+
+<body>
+
+    <div class="preloader">
+        <svg width="60" height="60" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <linearGradient x1="0%" y1="100%" y2="100%" id="loading-gradient">
+                <stop stop-color="#fff" stop-opacity="0" offset="0%" />
+                <stop stop-color="#fff" stop-opacity=".5" offset="40%" />
+                <stop stop-color="#fff" offset="100%" />
+            </linearGradient>
+            <g fill="none" fill-rule="evenodd">
+                <path fill="inherit" d="M34 18c0-8.837-7.163-16-16-16-6.34 0-11.82 3.688-14.409 9" stroke="url(#loading-gradient)" stroke-width="4" stroke-linecap="round">
+                </path>
+            </g>
+        </svg>
+    </div>
+
+
+    <div class="modal">
+        <div class="modal__container" role="dialog" aria-modal="true" data-graph-target="first">
+            <button class="btn-reset modal__close" aria-label="Close the popup">
+                <svg>
+                    <use xlink:href='img/svg.svg#close'></use>
+                </svg>
+
+            </button>
+            <div class="modal-content">
+                <div class="opened-card">
+                    <span class="opened-card__id visually-hidden"></span>
+                    <input class="opened-card__title" disabled placeholder="Title">
+                    <textarea class="opened-card__descr" disabled rows="5" placeholder="Description"></textarea>
+
+                    <div class="opened-card__bottom">
+                        <time class="opened-card__birth"></time>
+                        <div class="opened-card__actions">
+                            <button class="opened-card__save">Save</button>
+                            <button class="opened-card__edit" aria-label="Edit the task">
+                                <svg>
+                                    <use xlink:href='img/svg.svg#edit'></use>
+                                </svg>
+                            </button>
+                            <button class="opened-card__delete" aria-label="Delete the task">
+                                <svg>
+                                    <use xlink:href='img/svg.svg#trash'></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page-wrapper">
+        <header class="header fix-block">
+            <div class="header__container _container">
+                <h1 class="header__title">Home</h1>
+                <button tabindex="1" class="header__add">
+                    Click to add a new task +
+                    <svg>
+                        <use xlink:href='img/svg.svg#plus'></use>
+                    </svg>
+
+                </button>
+                <button tabindex="2" class="header__profile">
+                    <img src="img/profile.jpg" alt="pic of profile">
+                </button>
+            </div>
+        </header>
+
+        <main class="grid">
+            <h2 class="grid__title visually-hidden">Your tasklist</h2>
+            <div class="header-shell"></div>
+            <div class="grid__container _container">
+                <ul class="grid__list">
+
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container _container">
+                <address class="footer__team">
+                    <span>Team:</span>
+                    <a href="devTeam.txt" download class="footer__link">devTeam.txt</a>
+                </address>
+                <button class="theme-toggle">
+                    <span class="moon"></span>
+                    <span class="sun"></span>
+                    <small class="sun__ray"></small>
+                    <small class="sun__ray"></small>
+                    <small class="sun__ray"></small>
+                    <small class="sun__ray"></small>
+                    <small class="sun__ray"></small>
+                    <small class="sun__ray"></small>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/darkmode.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

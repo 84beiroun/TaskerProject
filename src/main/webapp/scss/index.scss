@@ -1,0 +1,297 @@
+.wrapper {
+    position: relative;
+    display: grid;
+    place-content: center;
+    width: 100%;
+    min-height: 100%;
+
+    background-color: var(--bg);
+
+    padding: 15px;
+    transition: background-color var(--trns)
+}
+
+.form {
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+
+    background-color: var(--bg-form);
+    border-radius: 20px;
+
+    box-shadow: var(--bs-color) var(--bs);
+
+    transition: background-color var(--trns),
+        box-shadow var(--trns);
+
+    &__col {
+        width: 100%;
+    }
+
+    &__group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__login,
+    &__signup {
+        outline: 0;
+
+        color: var(--title-color);
+        font-size: 30px;
+        text-align: center;
+        font-family: var(--ff);
+        font-weight: 700;
+        background-color: transparent;
+
+        @media (max-width: 767px) and (min-width: 320px) {
+            font-size: calc(22px + (30 - 22) * ((100vw - 320px) / (767 - 320)));
+        }
+
+        &._hidden {
+            opacity: 0.2;
+
+            @media (min-width: 992px) {
+
+                &:hover,
+                &:focus {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        transition: opacity var(--trns),
+        color var(--trns);
+    }
+
+    &__wrapper {
+        width: 100%;
+        padding: 40px 30px;
+    }
+
+    &__container {
+        --move-to: 0px;
+
+        display: flex;
+        height: 100%;
+        width: inherit;
+
+        transform: translateX(var(--move-to));
+        transition: transform var(--trns) .3s;
+    }
+
+    &__shell {
+        flex: 0 0 100%;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+
+        margin: 30px 0px 0px 0px;
+
+        background-color: transparent;
+
+        transition: opacity var(--trns) .3s,
+            visibility var(--trns) .3s,
+            transform var(--trns) .3s;
+
+        &._hidden {
+            opacity: 0;
+            visibility: hidden;
+
+            transition: opacity var(--trns),
+                visibility var(--trns),
+                transform var(--trns);
+        }
+
+        &_left {
+            &._hidden {
+                transform: translateX(-100%);
+            }
+        }
+
+        &_right {
+            &._hidden {
+                transform: translateX(100%);
+            }
+        }
+    }
+
+    &__field {
+        border-radius: 12px;
+        padding: 10px;
+
+        width: 100%;
+
+        outline: 0;
+
+        border: 2px solid var(--border);
+
+        background-color: var(--bg-field);
+
+        color: var(--text-field);
+
+        font-family: var(--ff);
+        font-size: 14px;
+
+        transition: border var(--trns),
+            background-color var(--trns),
+            color var(--trns);
+
+        &:not(:first-child) {
+            margin: 10px 0px 0px 0px;
+        }
+
+        @media (min-width: 992px) {
+            &:focus {
+                border: 2px solid var(--border-field)
+            }
+        }
+
+        &._invalid {
+            border: 2px solid var(--invalid);
+            color: var(--invalid);
+        }
+
+        &._valid {
+            border: 2px solid var(--valid);
+            color: var(--valid);
+        }
+    }
+
+    &__password-shell {
+        position: relative;
+        margin: 10px 0px 0px 0px;
+    }
+
+    &__show {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+
+		display: flex;
+
+        transform: translateY(-50%);
+
+        width: 20px;
+        height: 20px;
+
+		outline: var(--focus) dashed transparent;
+
+        background-color: transparent;
+
+		transition: outline var(--trns);
+
+        svg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-content: center;
+        }
+
+        circle,
+        path {
+            stroke: var(--title-color);
+
+            transition: stroke var(--trns);
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+
+                circle,
+                path {
+                    stroke: var(--accent-color);
+                }
+            }
+
+			&:focus {
+				outline: var(--focus) dashed red;
+			}
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%) rotate(45deg);
+
+            height: 0%;
+            width: 2px;
+
+            background-color: var(--title-color);
+            transition: background-color var(--trns), height var(--trns);
+        }
+
+        &._opened {
+            &:before {
+				height: 100%;
+            }
+
+            @media (min-width: 992px) {
+                &:hover {
+                    &:before {
+                        background-color: var(--accent-color);
+                    }
+                }
+            }
+        }
+    }
+
+    &__msg {
+        text-align: center;
+        margin: 15px 0px 0px 0px;
+
+        transition: opacity var(--trns),
+            visibility var(--trns),
+            transform var(--trns),
+			color var(--trns);
+
+        &._hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20%);
+        }
+
+		&._invalid {
+			color: var(--invalid);
+		}
+
+		&._valid {
+			color: var(--valid);
+		}
+    }
+
+    &__btn {
+        outline: 0;
+        align-self: start;
+
+        border-radius: 12px;
+        padding: 10px;
+        margin: 20px 0px 0px 0px;
+
+        background: var(--bg-btn);
+        color: #fff;
+        font-family: var(--ff);
+        font-weight: 700;
+        font-size: 16px;
+
+        transition: box-shadow var(--trns), transform var(--trns);
+
+        @media (min-width: 992px) {
+
+            &:hover,
+            &:focus {
+                transform: translateY(-2px);
+                box-shadow: var(--bs-color-btn) var(--bs);
+            }
+        }
+    }
+
+}

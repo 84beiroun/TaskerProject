@@ -1,0 +1,19 @@
+    /* TEAM */
+
+    Front-end Developer, UI/UX Designer: pink-eye.
+    Site: github.com/pink-eye.
+    
+    Back-end Developer:	8UhiPidaser.
+    Site: github.com/8UhiPidaser.
+
+    Back-end Developer:	.
+    Site:
+
+                    
+    /* SITE */
+
+    Last update (Обновлено): YYYY/MM/DD                             
+    Standards: HTML5, CSS3, ES6, Java, SQL
+    Components: GraphModal, DarkmodeJS
+    Software: VSCode, IntellijIDEA, SCSS
+                             

@@ -1,0 +1,163 @@
+.footer {
+    padding: 30px 0;
+    background-color: var(--bg-form);
+    transition: background-color var(--trns);
+
+    &__container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    &__team {
+        font-style: normal;
+        font-weight: 400;
+
+        color: var(--title-color);
+
+        transition: color var(--trns);
+    }
+
+    &__link {
+        margin: 0px 0px 0px 5px;
+        outline: 3px dashed transparent;
+        text-decoration: transparent underline 0px;
+
+		color: var(--link);
+
+        transition: text-decoration var(--trns),
+            outline var(--trns),
+			color var(--trns);
+
+        @media (min-width: 992px) {
+            &:hover,
+			&:focus {
+                text-decoration: var(--link) underline 2px;
+            }
+        }
+
+		@media (max-width: 991px) {
+			text-decoration: var(--link) underline 2px;
+		}
+
+		&:active {
+		    text-decoration: #FF0000 underline 2px;
+		}
+
+    }
+}
+
+.theme-toggle {
+    outline: 3px dashed transparent;
+    height: 37px;
+    top: 50%;
+    right: 40px;
+    width: 37px;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(50%, -50%);
+    overflow: hidden;
+
+    border-radius: 50%;
+    background-color: var(--bg-form);
+
+    transition: background-color var(--trns),
+        outline var(--trns);
+
+    @media (min-width: 992px) {
+        &:focus {
+            outline: var(--focus) dashed red;
+        }
+    }
+
+    .sun {
+        background-color: var(--color-secondary);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid var(--bg-form);
+
+        transition: border var(--trns), outline var(--trns);
+    }
+
+    .sun__ray {
+        width: 2px;
+        background-color: var(--color-secondary);
+        display: block;
+        height: 121%;
+        position: absolute;
+        z-index: -1;
+        transition: 0.4s all,
+            height 0.3s ease-in-out,
+            background-color var(--trns) 0s;
+
+        $columns: 12;
+
+        @for $i from 1 through $columns {
+            &:nth-child(#{$i}) {
+                transform: rotate(calc(#{$i} * calc(360deg / #{$columns})));
+            }
+        }
+    }
+
+    &:hover .sun__ray {
+        $columns: 12;
+
+        @for $i from 1 through $columns {
+            &:nth-child(#{$i}) {
+                transform: rotate(calc(calc(#{$i} * calc(360deg / #{$columns})) - 20deg));
+            }
+        }
+    }
+}
+
+.moon {
+    height: 28px;
+    width: 28px;
+    position: absolute;
+    background-color: var(--bg-form);
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    transform: scale(0) translate(25%, -25%);
+    z-index: 9;
+    transition: 0.4s transform 0s,
+        background-color var(--trns);
+
+    transform-origin: right;
+}
+
+.theme--night {
+    .theme-toggle {
+        background-color: var(--bg-form);
+        transition: background-color var(--trns), outline var(--trns);
+    }
+
+    .theme-toggle:hover {
+        .moon {
+            transform: scale(1) translate(-3%, -18%);
+        }
+    }
+
+    .moon {
+        transform: scale(1) translate(11%, -11%);
+    }
+
+    .theme-toggle .sun__ray {
+        height: 0;
+        transition: 0.4s,
+            transform 0.4s,
+            height 0.2s 0.1s, background-color var(--trns) 0s;
+
+        $columns: 12;
+
+        @for $i from 1 through $columns {
+            &:nth-child(#{$i}) {
+                transform: rotate(calc(calc(#{$i} * calc(360deg / #{$columns})) - 45deg));
+            }
+        }
+    }
+}
